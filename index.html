@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Profile - Single Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f4f4f4;
+        color: #222;
+    }
+    header {
+        background: linear-gradient(90deg, blue, yellow);
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        background-color: #222;
+    }
+    nav a {
+        color: white;
+        padding: 14px 20px;
+        text-decoration: none;
+        display: block;
+    }
+    nav a:hover {
+        background-color: green;
+    }
+    .container {
+        padding: 20px;
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+    }
+    .profile-pic {
+        display: block;
+        margin: auto;
+        width: 150px;
+        height: 150px;
+        border-square: 50%;
+        border: 4px solid white;
+    }
+    h2 {
+        text-align: center;
+        color: green;
+    }
+    .section {
+        margin-top: 20px;
+        display: none;
+    }
+    .section.active {
+        display: block;
+    }
+    .section h3 {
+        border-left: 5px solid red;
+        padding-left: 10px;
+        color: red;
+    }
+    button {
+        background-color: green;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin-top: 20px;
+        cursor: pointer;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    button:hover {
+        background-color: red;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Student Profile</h1>
+</header>
+
+<nav>
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('about')">About</a>
+    <a href="#" onclick="showSection('details')">Details</a>
+    <a href="#" onclick="showSection('qualification')">Qualification</a>
+    <a href="#" onclick="showSection('skills')">Skills</a>
+</nav>
+
+<div class="container">
+    <!-- Home Section -->
+    <div id="home" class="section active">
+        <img src="2.jpg" alt="Profile Picture" class="profile-pic">
+        <h2>Hi! i am Lokesh</h2>
+        <p style="text-align:center;">Welcome to my student profile! Use the menu above to learn more about me.</p>
+        <button onclick="alert('Welcome to the Student Profile Page!')">Click Me</button>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="section">
+        <h3>About Me</h3>
+        <p>I am lokesh well in python as an Ai developer,realtime website  developer.</p>
+    </div>
+
+    <!-- Details Section -->
+    <div id="details" class="section">
+        <h3>Contact Information</h3>
+        <p><strong>Email:</strong>  lokeshsenthil2511@gmail.com</p>
+        <p><strong>Phone:</strong> +91 9042556257</p>
+        <p><strong>Location:</strong>  tamilnadu, India</p>
+    </div>
+
+    <!-- Qualification Section -->
+    <div id="qualification" class="section">
+        <h3>Education</h3>
+        <ul>
+            <li>BE computer science engineering( 2026) </li>
+           
+        </ul>
+    </div>
+
+    <!-- Skills Section -->
+    <div id="skills" class="section">
+        <h3>Technical Skills</h3>
+        <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>Java, Python</li>
+            <li> software developer </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+function showSection(sectionId) {
+    // Hide all sections
+    document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+    // Show the selected section
+    document.getElementById(sectionId).classList.add('active');
+}
+</script>
+
+</body>
+</html>
